@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+  </head>
+
+  <body>
+    <section id="landing-page">
+      <h1 id="page-title1">Welcome to Digi Creators</h1>
+      <h3 id="page-subtitle">Create Your Resume in Minutes..</h3>
+      <button id="btn1">
+        <a href="#input-section">Let's Start </a>
+        <img id="down-arrow" src="images/down-arrow.png" alt="down arrow" />
+      </button>
+    </section>
+
+    <section id="input-section">
+      <div class="main-input-form">
+        <header class="cv-header">
+          <section class="header-sidebar-right">
+           
+           <label for="upload"> <img
+              class="profile-picture"
+              src="images/profile.png"
+              alt="Profile Picture" 
+            /> </label>
+            <input
+              type="file"
+              accept="image/jpeg, image/png, image/jpg"
+              id="upload"
+              style="display: none"
+            />
+          
+
+
+          </section>
+          <section class="header-sidebar-left">
+            <div id="header-info">
+              <input type="text" id="name" required placeholder="Your Name" />
+              <input
+                type="text"
+                id="job-title"
+                required
+                placeholder="Your Job Title"
+              />
+            </div>
+          </section>
+        </header>
+
+        <section class="sidebar"></section>
+
+        <div class="info-container">
+          <b>Objective</b>
+
+          <div>
+            <textarea
+              required
+              name="summary"
+              id="summary"
+              placeholder="Write your summary here"
+            ></textarea>
+          </div>
+
+          <b>Skills</b>
+
+          <div>
+            <textarea
+              required
+              name="skills"
+              id="skills"
+              placeholder="Your Skills here"
+            ></textarea>
+          </div>
+
+          <b>Experience</b>
+          <div>
+            <textarea
+              required
+              name="Experience"
+              placeholder="Your Experience here"
+              id="experience"
+            ></textarea>
+          </div>
+
+          <b>Education</b>
+
+          <div>
+            <textarea
+              required
+              name="Education"
+              placeholder="Your education here"
+              id="education"
+            ></textarea>
+          </div>
+
+          <b>Contacts</b>
+
+          <div id="contact">
+            <input
+              id="phone"
+              type="number"
+              required
+              placeholder="+92873826224"
+            />
+            <input
+              id="web-url"
+              type="url"
+              required
+              placeholder="Your website"
+              name="website"
+              id=""
+            />
+            <input
+              id="email"
+              type="email"
+              required
+              name="email"
+              placeholder="Your Email"
+              id=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+
+    <section id="form-section">
+      <div class="main">
+        <header class="cv-header">
+          <section class="header-sidebar-right">
+            <div class="image-circle">
+              <img
+                src="images/profile.png"
+                alt="Profile Picture"
+                id="profile-pic"
+              />
+            </div>
+
+            <script>
+              // JavaScript to handle image upload
+              const uploadInput = document.getElementById("upload");
+              const profilePic = document.getElementById("profile-pic");
+
+              uploadInput.addEventListener("change", function (event) {
+                const file = event.target.files[0];
+                if (file) {
+                  if (file.type.startsWith("image/")) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                      // Update the image source
+                      profilePic.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                  } else {
+                    alert("Please upload a valid image file (JPEG, PNG, JPG).");
+                  }
+                }
+              });
+            </script>
+          </section>
+          <section class="header-sidebar-left">
+            <h1 id="template-name" contenteditable="true">Alina Fatima</h1>
+            <h3 id="template-job-title" contenteditable="true">
+              Frontend Developer
+            </h3>
+          </section>
+        </header>
+
+        <div class="info-container">
+          <b class="headings">Summary</b>
+          <p id="template-summary">
+            A passionate Frontend Developer skilled in building responsive,
+            user-friendly web interfaces using Next.js, React, Tailwind CSS, and
+            JavaScript. Experienced in creating and deploying scalable
+            applications, with a focus on performance and design. Adept at
+            solving complex UI challenges and delivering seamless user
+            experiences.
+          </p>
+          <b class="headings">Skills</b>
+          <p id="template-skills">
+            - Frontend Technologies: HTML, CSS, JavaScript, TypeScript<br />
+            - Frameworks & Libraries: React, Next.js, Tailwind CSS, Shadcn<br />
+            - RESTful APIs and JSON<br />
+            - UI/UX Tools: Figma - Version Control: Git, GitHub<br />
+            - Responsive Design: Mobile-first development, Flexbox, CSS Grid
+          </p>
+          <b class="headings">Experience</b>
+          <p id="template-experience">
+            Frontend Developer ABC Technologies Jan 2020 - Present
+            <br />
+            - Developed various web applications using the Frontend, such as an
+            e-commerce platform, a social media network, and a blog site. <br />
+            - Implemented responsive and dynamic front-end features using React,
+            HTML, CSS, and Tailwind. <br />
+            - Utilized RESTful APIs and JSON to communicate between the
+            front-end and the back-end.
+          </p>
+
+          <b class="headings">Education</b>
+          <p id="template-education">
+            Habib Public School<br />
+            Fatimiyah Girls Collage<br />
+            Karachi Universiy
+          </p>
+
+          <b class="headings">Contacts</b>
+          <div id="contact">
+            <p id="template-phone">+92 123 456 7890</p>
+            <p id="template-email">abc110@gmail.com</p>
+            <p id="template-website">https://www.abc.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="download-container">
+        <button id="edit-btn"><a href="#input-section">Edit Resume</a></button>
+        <button id="download-btn">Download PDF</button>
+        <button id="share-btn">Share Resume</button>
+      </div>
+    </section>
+
+    <script>
+      const downloadBtn = document.getElementById("download-btn");
+  const resumeSection = document.querySelector(".main");
+
+  // Function to download the resume as a PDF
+  downloadBtn.addEventListener("click", function () {
+    const options = {
+      margin: 0.5, 
+      filename: "Resume.pdf", 
+      image: { type: "jpeg", quality: 0.98 }, 
+      html2canvas: { scale: 2 }, 
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" }, 
+    };
+
+    // Generate PDF using html2pdf
+    html2pdf().set(options).from(resumeSection).save();
+  });
+
+      //share resume
+      document
+        .getElementById("share-btn")
+        .addEventListener("click", function () {
+          const uniqueId = Math.random().toString(36).substring(2, 15);
+          const baseURL = window.location.origin + window.location.pathname;
+          const shareableLink = `${baseURL}?resume=${uniqueId}`;
+
+          if (navigator.share) {
+            navigator
+              .share({
+                title: "My Resume",
+                text: "Check out my resume!",
+                url: shareableLink,
+              })
+              .catch(console.error);
+          } else {
+            navigator.clipboard.writeText(shareableLink).then(() => {
+              alert("Unique resume link copied to clipboard!");
+            });
+          }
+        });
+    </script>
+
+   
+    <script src="main.js"></script>
+  </body>
+</html>
